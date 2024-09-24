@@ -2,7 +2,7 @@
 
 A easy logger for C++
 
-# TODO
+# TO DO
 
 - Syslog
 - Yaml config
