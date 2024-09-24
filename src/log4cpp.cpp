@@ -56,6 +56,7 @@ void Log4Cpp::critical(const string &message)
 void Log4Cpp::log(const LogLevel level, const string &message)
 {
 	// Get current timestamp
+	// TO DO: Do configurable
 	time_t now = time(0);
 	tm *timeinfo = localtime(&now);
 	char timestamp[20];
@@ -178,6 +179,7 @@ const string Log4Cpp::levelToString(const LogLevel level) const
 	}
 }
 
+// For testing
 int main()
 {
 	Log4Cpp logger;

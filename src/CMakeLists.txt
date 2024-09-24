@@ -13,15 +13,19 @@ add_compile_options(
   "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
 )
 
-#add_executable(
-#  ${PROJECT_NAME}
-#  log4cpp.cpp
-#)
+set(IS_LIBRARY, true)
 
-add_library(
-  ${PROJECT_NAME}
-  log4cpp.cpp
-)
+if(!IS_LIBRARY)
+  add_executable(
+    ${PROJECT_NAME}
+    log4cpp.cpp
+  )
+else()
+  add_library(
+    ${PROJECT_NAME}
+    log4cpp.cpp
+  )
+endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC ../include)
 

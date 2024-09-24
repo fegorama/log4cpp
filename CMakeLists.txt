@@ -14,5 +14,8 @@ if(LOG4CPP_PROJECT_BUILD_TESTING)
 endif()
 
 set(BUILD_SHARED_AND_STATIC_LIBS ON)
+
+# TO DO: Add config for YAML
 #add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../yaml-cpp ./src/Debug)
+
 add_subdirectory(src)

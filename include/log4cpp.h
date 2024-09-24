@@ -12,13 +12,17 @@
 
 using namespace std;
 
+// Error leves same systemd/Journal
 enum class LogLevel : int8_t
 {
-    LOG_LEVEL_DEBUG = 7,
-    LOG_LEVEL_INFO = 6,
-    LOG_LEVEL_WARNING = 4,
+    LOG_LEVEL_EMERGENCY = 0, // not use
+    LOG_LEVEL_ALERT = 1,     // not use
+    LOG_LEVEL_CRITICAL = 2,
     LOG_LEVEL_ERROR = 3,
-    LOG_LEVEL_CRITICAL = 2
+    LOG_LEVEL_WARNING = 4,
+    LOG_LEVEL_NOTICE = 5, // not use
+    LOG_LEVEL_INFO = 6,
+    LOG_LEVEL_DEBUG = 7
 };
 
 class Log4Cpp
@@ -37,8 +41,8 @@ public:
     void setEnableSyslog(const bool enable);
     void setEnableSystemd(const bool enable);
 
-    //void setLogFile(const string filename);
-    //void setLogLevel(const LogLevel level);
+    // void setLogFile(const string filename);
+    // void setLogLevel(const LogLevel level);
     LogLevel getLogLevel() const;
     bool isDebugEnabled();
     bool isInfoEnabled();
