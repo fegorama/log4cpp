@@ -8,16 +8,17 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <systemd/sd-journal.h>
 
 using namespace std;
 
 enum class LogLevel : int8_t
 {
-    LOG_LEVEL_DEBUG,
-    LOG_LEVEL_INFO,
-    LOG_LEVEL_WARNING,
-    LOG_LEVEL_ERROR,
-    LOG_LEVEL_CRITICAL
+    LOG_LEVEL_DEBUG = 7,
+    LOG_LEVEL_INFO = 6,
+    LOG_LEVEL_WARNING = 4,
+    LOG_LEVEL_ERROR = 3,
+    LOG_LEVEL_CRITICAL = 2
 };
 
 class Log4Cpp

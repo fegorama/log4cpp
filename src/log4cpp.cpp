@@ -7,6 +7,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <string>
 
 #include "log4cpp.h"
 
@@ -75,6 +76,13 @@ void Log4Cpp::log(const LogLevel level, const string &message)
 			logFile << logEntry.str();
 			logFile.flush();
 		}
+
+	if (this->enableSystemd)
+	{
+		string s = "MESSAGE=";
+		s.append(logEntry.str());
+		sd_journal_send(s.c_str(), "SD_JOURNAL_TEST=SEND", "PRIORITY=%i", level, NULL);
+	}
 }
 
 void Log4Cpp::setEnableConsole(const bool enable)
