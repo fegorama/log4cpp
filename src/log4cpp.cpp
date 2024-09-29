@@ -130,7 +130,7 @@ void Log4Cpp::openLogFile()
 
 	if (!logFile.is_open())
 	{
-		cerr << "Error opening log file." << endl;
+		cerr << "Error opening log file: " << this->fileName << endl;
 		exit(1);
 	}
 }
