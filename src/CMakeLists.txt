@@ -23,6 +23,7 @@ if(!IS_LIBRARY)
 else()
   add_library(
     ${PROJECT_NAME}
+    STATIC 
     log4cpp.cpp
   )
 endif()

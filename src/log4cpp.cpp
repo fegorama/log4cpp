@@ -180,6 +180,7 @@ const string Log4Cpp::levelToString(const LogLevel level) const
 }
 
 // For testing
+/*
 int main()
 {
 	Log4Cpp logger;
@@ -206,3 +207,4 @@ int main()
 
 	return 0;
 }
+*/
